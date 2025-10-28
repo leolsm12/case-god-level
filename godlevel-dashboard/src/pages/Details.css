@@ -1,0 +1,73 @@
+.details-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Sidebar já tem largura fixa de 260px */
+.details-content {
+  padding: 80px 20rem 24px;
+  width: calc(100% - 260px);
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Área dos gráficos */
+.charts-area {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center; /* centraliza em telas pequenas */
+}
+
+/* Cada box de gráfico */
+.chart-box {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  padding: 16px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.chart-box:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 1024px) { /* tablets */
+  .details-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 80px 16px 16px;
+  }
+  .chart-box {
+    width: 45%;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) { /* celulares */
+  .details-container {
+    flex-direction: column;
+  }
+  .details-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 80px 12px 12px;
+  }
+  .charts-area {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .chart-box {
+    width: 100%;
+    height: 160px;
+  }
+}

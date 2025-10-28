@@ -1,0 +1,77 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #ff4f00; /* cor vibrante tipo iFood */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  color: #fff;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 1.3rem;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* 👇 Botões redondos em todas as plataformas */
+.nav-btn {
+  background-color: #fff;
+  color: #ff4f00;
+  border: none;
+  border-radius: 100px; /* Força arredondamento total */
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  -webkit-appearance: none; /* Remove estilo padrão iOS */
+  appearance: none;         /* Remove estilo padrão Android */
+}
+
+.nav-btn:focus {
+  outline: none;
+}
+
+.nav-btn:hover {
+  background-color: #ffe5d0;
+}
+
+.nav-btn.active {
+  background-color: #444444;
+  color: white;
+  box-shadow: 0 0 8px rgba(255, 79, 0, 0.6);
+}
+
+/* 🔸 Responsividade */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    height: auto;
+    padding: 8px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav-btn {
+    width: 45%;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 12px 0;
+  }
+}

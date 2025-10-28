@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TopMenu from './components/TopMenu';
+import Home from './pages/Home';
+import Details from './pages/Details';
 
-function App() {
+const App: React.FC = () => {
+  const [page, setPage] = useState('home');
+
+  // Função que o TopMenu vai chamar ao clicar nos botões
+  const handleNavigate = (targetPage: string) => {
+    setPage(targetPage);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Passamos o handleNavigate corretamente */}
+      <TopMenu currentPage={page} onNavigate={handleNavigate} />
+
+      {/* Renderiza a página conforme o estado */}
+      {page === 'home' && <Home />}
+      {page === 'details' && <Details/>}
     </div>
   );
-}
+};
 
 export default App;

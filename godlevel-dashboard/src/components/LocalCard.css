@@ -1,0 +1,25 @@
+.local-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  width: 220px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.local-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.local-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #ff5722;
+}
+
+.local-card p {
+  margin: 4px 0;
+  color: #444;
+}
