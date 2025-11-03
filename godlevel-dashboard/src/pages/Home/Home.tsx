@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
-import { establishments } from '../data/mockData';
-import LocalCard from '../components/LocalCard';
+import { establishments } from '../../data/mockData';
+import LocalCard from '../../components/LocalCard';
 
 const Home: React.FC = () => {
   const totalRevenue = establishments.reduce((acc, l) => acc + l.revenue, 0);

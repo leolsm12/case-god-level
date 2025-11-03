@@ -1,0 +1,162 @@
+/* Details.css */
+.details-container {
+  display: flex;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 63px;
+  left: 0;
+  width: 260px;
+  background: rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  padding: 18px;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 2px 0 12px rgba(0,0,0,0.15);
+}
+
+/* Form fields */
+.field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ffab91;
+}
+
+.field input[type="number"],
+.field select {
+  width: 10%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  outline: none;
+}
+
+.field input[type="number"]::placeholder,
+.field select::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* small buttons */
+.btn-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.small-btn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.small-btn:hover {
+  background: rgba(255,87,34,0.8);
+  border-color: #ff5722;
+}
+
+.small-btn.active {
+  background: #ff5722;
+  color: white;
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* store checkbox list */
+.stores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.checkbox-label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+/* content area */
+.details-content {
+  margin-left: 18rem;
+  padding: 100px 20px 40px;
+  width: calc(100% - 260px);
+}
+
+/* charts/cards area */
+.charts-area {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.charts-area > div {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.charts-area > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+/* divider */
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 6px 0;
+}
+
+/* responsive adjustments */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+  .details-content {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    padding: 90px 16px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .details-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  .charts-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
